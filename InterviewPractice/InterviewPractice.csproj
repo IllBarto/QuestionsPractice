@@ -53,6 +53,16 @@
     <Compile Include="AttributesReflection\SampleAttribute.cs" />
     <Compile Include="Automapper\User.cs" />
     <Compile Include="Automapper\UserEntity.cs" />
+    <Compile Include="Design Patterns\Singleton\SingleObject.cs" />
+    <Compile Include="Design Patterns\StrategyPattern2\Email.cs" />
+    <Compile Include="Design Patterns\StrategyPattern2\IAction.cs" />
+    <Compile Include="Design Patterns\StrategyPattern2\StrategyContext2.cs" />
+    <Compile Include="Design Patterns\StrategyPattern2\TextMessage.cs" />
+    <Compile Include="Design Patterns\StrategyPattern\Addition.cs" />
+    <Compile Include="Design Patterns\StrategyPattern\IOperation.cs" />
+    <Compile Include="Design Patterns\StrategyPattern\Multiplication.cs" />
+    <Compile Include="Design Patterns\StrategyPattern\StrategyContext.cs" />
+    <Compile Include="Design Patterns\StrategyPattern\Substraction.cs" />
     <Compile Include="OOP_Principles\Polymorphism.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProgramActions.cs" />
@@ -78,6 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Concurrency\" />
+    <Folder Include="Design Patterns\Decorator\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

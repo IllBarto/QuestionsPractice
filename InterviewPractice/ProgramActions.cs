@@ -4,13 +4,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using AutoMapper;
 using Practice.Abstractions;
 using Practice.Collections;
 using Practice.Extentions;
 using Practice.Interfaces.Articles;
 using Practice.MultipleInheritance;
 using Practice.OOP_Principles;
+using AutoMapper;
+using InterviewPractice.Design_Patterns.StrategyPattern;
+using InterviewPractice.Design_Patterns.StrategyPattern2;
+using InterviewPractice.Design_Patterns.Singleton;
 
 namespace Practice
 {
@@ -183,6 +186,57 @@ namespace Practice
             Console.WriteLine("AddSome(2, 6) \t\t\t: " + result3);
             Console.WriteLine("AddSome(5, null, null) \t\t: " + result4);
             Console.WriteLine("AddSome(3, 4, 5, 6, 9, 12) \t: " + result5);
+        }
+        public static void Perform_StrategyPattern()
+        {
+            StrategyContext st = null;
+
+            Console.Write("Choose add (1)/ subts(2)/ mult(3): ");
+            int input = int.Parse(Console.ReadLine());
+            string method = "";
+            switch (input)
+            {
+                case (1):
+                    st = new StrategyContext(new Addition());
+                    method = "Addition";
+                    break;
+                case (2):
+                    st = new StrategyContext(new Substraction());
+                    method = "Substraction";
+                    break;
+                case (3):
+                    st = new StrategyContext(new Multiplication());
+                    method = "Multiplication";
+                    break;
+            }
+
+            int result = st.ExecuteOperation(2, 3);
+
+            Console.WriteLine($"\nThe result of your {method} is {result}.");
+        }
+        public static void Perform_StragetyPattern2()
+        {
+            StrategyContext2 sContext = null;
+
+            Console.WriteLine("Give message: ");
+            string mess = Console.ReadLine();
+
+            Console.Write("Text message (t) or email (e)? : ");
+            string op = Console.ReadLine();
+
+            if (op == "t")
+                sContext = new StrategyContext2(new TextMessage());
+            else if (op == "e")
+                sContext = new StrategyContext2(new Email());
+
+            if (sContext != null)
+                sContext.PerformAction(mess);
+        }
+        public static void Perform_StrategySingleton()
+        {
+            SingleObject singleObject = SingleObject.GetInstance();
+
+            singleObject.WriteMessage("Message from Singleton");
         }
     }
 }
