@@ -262,6 +262,7 @@ namespace Practice
 
             singleObject.WriteMessage("Message from Singleton");
         }
+
     }
 
     class Helpers
