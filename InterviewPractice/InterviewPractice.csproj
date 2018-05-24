@@ -55,6 +55,10 @@
     <Compile Include="Automapper\UserEntity.cs" />
     <Compile Include="Concurrency\MainThread.cs" />
     <Compile Include="Concurrency\SecondThread.cs" />
+    <Compile Include="Design Patterns\Decorator\BasicCar.cs" />
+    <Compile Include="Design Patterns\Decorator\ICar.cs" />
+    <Compile Include="Design Patterns\Decorator\CarDecorator.cs" />
+    <Compile Include="Design Patterns\Decorator\SportCar.cs" />
     <Compile Include="Design Patterns\Singleton\SingleObject.cs" />
     <Compile Include="Design Patterns\StrategyPattern2\Email.cs" />
     <Compile Include="Design Patterns\StrategyPattern2\IAction.cs" />
@@ -88,8 +92,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Design Patterns\Decorator\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

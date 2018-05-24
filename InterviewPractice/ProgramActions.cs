@@ -18,6 +18,7 @@ using System.Diagnostics;
 using InterviewPractice.Concurrency;
 using System.Threading.Tasks;
 using System.Threading;
+using InterviewPractice.Design_Patterns.Decorator;
 
 namespace Practice
 {
@@ -261,6 +262,14 @@ namespace Practice
             SingleObject singleObject = SingleObject.GetInstance();
 
             singleObject.WriteMessage("Message from Singleton");
+        }
+        public static void Perform_Decorator()
+        {
+            BasicCar honda = new BasicCar();
+            SportCar sportHonda = new SportCar(honda);
+
+            Console.WriteLine($"Basic Honda: {honda.Model}, {honda.HorsPower} hors power, {honda.Consumption}l consumption, ${honda.Price} price.");
+            Console.WriteLine($"Basic Honda: {sportHonda.Model}, {sportHonda.HorsPower} hors power, {sportHonda.Consumption}l consumption, ${sportHonda.Price} price.");
         }
 
     }

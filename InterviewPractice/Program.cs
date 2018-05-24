@@ -23,6 +23,7 @@ namespace InterviewPractice
             //ProgramActions.Perform_StragetyPattern2();
             //ProgramActions.Perform_Concurrency();
             //ProgramActions.Perform_StrategySingleton();
+            ProgramActions.Perform_Decorator();
 
             Console.ReadLine();
         }
