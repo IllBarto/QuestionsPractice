@@ -14,6 +14,10 @@ using AutoMapper;
 using InterviewPractice.Design_Patterns.StrategyPattern;
 using InterviewPractice.Design_Patterns.StrategyPattern2;
 using InterviewPractice.Design_Patterns.Singleton;
+using System.Diagnostics;
+using InterviewPractice.Concurrency;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace Practice
 {
@@ -214,6 +218,26 @@ namespace Practice
 
             Console.WriteLine($"\nThe result of your {method} is {result}.");
         }
+        public static void Perform_Concurrency()
+        {
+
+            var firstWatch = Stopwatch.StartNew();
+            Helpers.CallFirstTask();
+            Helpers.CallSecondTask();
+            firstWatch.Stop();
+
+            Console.WriteLine("\n\nAsync\n\n");
+            Console.WriteLine("Wait 5 seconds...");
+            Thread.Sleep(5000);
+
+            var secondWatch = Stopwatch.StartNew();
+            Helpers.CallFirstTaskAsync();
+            Helpers.CallSecondTaskAsync();
+            secondWatch.Stop();
+
+            Console.WriteLine("\n\nSync version executed in : " + firstWatch.ElapsedMilliseconds);
+            Console.WriteLine("Async version executed in : " + secondWatch.ElapsedMilliseconds);
+        }
         public static void Perform_StragetyPattern2()
         {
             StrategyContext2 sContext = null;
@@ -237,6 +261,29 @@ namespace Practice
             SingleObject singleObject = SingleObject.GetInstance();
 
             singleObject.WriteMessage("Message from Singleton");
+        }
+    }
+
+    class Helpers
+    {
+        public static void CallFirstTask()
+        {
+            MainThread.DoFirstTask(5);
+        }
+
+        public static async Task CallFirstTaskAsync()
+        {
+            await Task.Run(() => MainThread.DoFirstTask(5));
+        }
+
+        public static void CallSecondTask()
+        {
+            SecondThread.DoSecondTask(5);
+        }
+
+        public static async Task CallSecondTaskAsync()
+        {
+            await Task.Run(() => SecondThread.DoSecondTask(5));
         }
     }
 }
