@@ -19,6 +19,7 @@ using InterviewPractice.Concurrency;
 using System.Threading.Tasks;
 using System.Threading;
 using InterviewPractice.Design_Patterns.Decorator;
+using InterviewPractice.FluentAPI.Context;
 
 namespace Practice
 {
@@ -270,6 +271,47 @@ namespace Practice
 
             Console.WriteLine($"Basic Honda: {honda.Model}, {honda.HorsPower} hors power, {honda.Consumption}l consumption, ${honda.Price} price.");
             Console.WriteLine($"Basic Honda: {sportHonda.Model}, {sportHonda.HorsPower} hors power, {sportHonda.Consumption}l consumption, ${sportHonda.Price} price.");
+        }
+        public static void Perform_EF()
+        {
+            using (var context = new MarketContext())
+            {
+                using (var dbTransaction = context.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        InterviewPractice.FluentAPI.Context.Market market = new InterviewPractice.FluentAPI.Context.Market()
+                        {
+                            Name = "Market2",
+                            Location = "Straseni",
+                            Products = new List<Product>()
+                            {
+                                new Product() { Name = "Food" },
+                                new Product() { Name = "Clothes" }
+                            }
+                        };
+
+                        context.Markets.Add(market);
+                        context.SaveChanges();
+
+                        dbTransaction.Commit();
+                    }
+                    catch
+                    {
+                        dbTransaction.Rollback();
+                    }
+                }
+
+                List<InterviewPractice.FluentAPI.Context.Market> markets = new List<InterviewPractice.FluentAPI.Context.Market>();
+                markets = context.Markets.Select(m => m).ToList();
+
+                List<Product> m1p = new List<Product>();
+
+                foreach (var m in markets)
+                {
+                    Console.WriteLine($"Market: {m.Name}, loc in {m.Location}.");
+                }
+            }
         }
 
     }

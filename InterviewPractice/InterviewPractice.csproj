@@ -35,7 +35,14 @@
     <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
@@ -69,6 +76,46 @@
     <Compile Include="Design Patterns\StrategyPattern\Multiplication.cs" />
     <Compile Include="Design Patterns\StrategyPattern\StrategyContext.cs" />
     <Compile Include="Design Patterns\StrategyPattern\Substraction.cs" />
+    <Compile Include="FluentAPI\Context\Market.cs" />
+    <Compile Include="FluentAPI\Context\MarketContext.cs" />
+    <Compile Include="FluentAPI\Context\Product.cs" />
+    <Compile Include="Migrations\201805271437352_InitialCreate.cs" />
+    <Compile Include="Migrations\201805271437352_InitialCreate.Designer.cs">
+      <DependentUpon>201805271437352_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805271441236_ChangePK.cs" />
+    <Compile Include="Migrations\201805271441236_ChangePK.Designer.cs">
+      <DependentUpon>201805271441236_ChangePK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805271446324_CompositePK.cs" />
+    <Compile Include="Migrations\201805271446324_CompositePK.Designer.cs">
+      <DependentUpon>201805271446324_CompositePK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805271452339_InitialStateTable.cs" />
+    <Compile Include="Migrations\201805271452339_InitialStateTable.Designer.cs">
+      <DependentUpon>201805271452339_InitialStateTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805271453403_AlterTable.cs" />
+    <Compile Include="Migrations\201805271453403_AlterTable.Designer.cs">
+      <DependentUpon>201805271453403_AlterTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805271459258_AlterTable2.cs" />
+    <Compile Include="Migrations\201805271459258_AlterTable2.Designer.cs">
+      <DependentUpon>201805271459258_AlterTable2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805271506225_AlterTable3.cs" />
+    <Compile Include="Migrations\201805271506225_AlterTable3.Designer.cs">
+      <DependentUpon>201805271506225_AlterTable3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805271517147_AlterTable4.cs" />
+    <Compile Include="Migrations\201805271517147_AlterTable4.Designer.cs">
+      <DependentUpon>201805271517147_AlterTable4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805271540272_AlterTable5.cs" />
+    <Compile Include="Migrations\201805271540272_AlterTable5.Designer.cs">
+      <DependentUpon>201805271540272_AlterTable5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OOP_Principles\Polymorphism.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProgramActions.cs" />
@@ -92,6 +139,34 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201805271437352_InitialCreate.resx">
+      <DependentUpon>201805271437352_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805271441236_ChangePK.resx">
+      <DependentUpon>201805271441236_ChangePK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805271446324_CompositePK.resx">
+      <DependentUpon>201805271446324_CompositePK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805271452339_InitialStateTable.resx">
+      <DependentUpon>201805271452339_InitialStateTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805271453403_AlterTable.resx">
+      <DependentUpon>201805271453403_AlterTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805271459258_AlterTable2.resx">
+      <DependentUpon>201805271459258_AlterTable2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805271506225_AlterTable3.resx">
+      <DependentUpon>201805271506225_AlterTable3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805271517147_AlterTable4.resx">
+      <DependentUpon>201805271517147_AlterTable4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805271540272_AlterTable5.resx">
+      <DependentUpon>201805271540272_AlterTable5.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
