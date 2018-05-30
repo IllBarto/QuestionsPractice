@@ -62,6 +62,7 @@
     <Compile Include="Automapper\UserEntity.cs" />
     <Compile Include="Concurrency\MainThread.cs" />
     <Compile Include="Concurrency\SecondThread.cs" />
+    <Compile Include="CountObjects\Car.cs" />
     <Compile Include="Design Patterns\Decorator\BasicCar.cs" />
     <Compile Include="Design Patterns\Decorator\ICar.cs" />
     <Compile Include="Design Patterns\Decorator\CarDecorator.cs" />
@@ -115,6 +116,18 @@
     <Compile Include="Migrations\201805271540272_AlterTable5.Designer.cs">
       <DependentUpon>201805271540272_AlterTable5.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805301025397_StoredProcedure.cs" />
+    <Compile Include="Migrations\201805301025397_StoredProcedure.Designer.cs">
+      <DependentUpon>201805301025397_StoredProcedure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805301045009_add-migration StoredP.cs" />
+    <Compile Include="Migrations\201805301045009_add-migration StoredP.Designer.cs">
+      <DependentUpon>201805301045009_add-migration StoredP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805301113338_SelectProc.cs" />
+    <Compile Include="Migrations\201805301113338_SelectProc.Designer.cs">
+      <DependentUpon>201805301113338_SelectProc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OOP_Principles\Polymorphism.cs" />
     <Compile Include="Program.cs" />
@@ -167,6 +180,18 @@
     <EmbeddedResource Include="Migrations\201805271540272_AlterTable5.resx">
       <DependentUpon>201805271540272_AlterTable5.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805301025397_StoredProcedure.resx">
+      <DependentUpon>201805301025397_StoredProcedure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805301045009_add-migration StoredP.resx">
+      <DependentUpon>201805301045009_add-migration StoredP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805301113338_SelectProc.resx">
+      <DependentUpon>201805301113338_SelectProc.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="StoredProcedure\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

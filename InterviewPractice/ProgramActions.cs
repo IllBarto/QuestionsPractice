@@ -20,6 +20,8 @@ using System.Threading.Tasks;
 using System.Threading;
 using InterviewPractice.Design_Patterns.Decorator;
 using InterviewPractice.FluentAPI.Context;
+using System.Data.SqlClient;
+using InterviewPractice.CountObjects;
 
 namespace Practice
 {
@@ -313,6 +315,25 @@ namespace Practice
                 }
             }
         }
+        public static void Perform_StoredProcedure()
+        {
+            using (MarketContext context = new MarketContext())
+            {
+                var sqlParam = new SqlParameter("@id", 2);
+
+                Product result = context.Database.SqlQuery<Product>("SelectProduct @id", sqlParam).SingleOrDefault();
+                Console.WriteLine(result);
+            }
+        }
+        public static void Perform_Count()
+        {
+            Car car1 = new Car();
+
+            Car car2 = new Car();
+            Car car3 = new Car();
+
+            Console.WriteLine("Car counter : " + CarCounter.Count + "\nMy car counter : " + Car.MyCarCounter);
+        }
 
     }
 
@@ -337,5 +358,10 @@ namespace Practice
         {
             await Task.Run(() => SecondThread.DoSecondTask(5));
         }
+    }
+
+    static class CarCounter
+    {
+        public static int Count = 0;
     }
 }
