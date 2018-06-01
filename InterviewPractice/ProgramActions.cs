@@ -22,6 +22,7 @@ using InterviewPractice.Design_Patterns.Decorator;
 using InterviewPractice.FluentAPI.Context;
 using System.Data.SqlClient;
 using InterviewPractice.CountObjects;
+using InterviewPractice.OOP_Principles;
 
 namespace Practice
 {
@@ -195,6 +196,12 @@ namespace Practice
             Console.WriteLine("AddSome(5, null, null) \t\t: " + result4);
             Console.WriteLine("AddSome(3, 4, 5, 6, 9, 12) \t: " + result5);
         }
+        public static void Perform_Polymorphism2()
+        {
+            Polymorphism2 poly = new Polymorphism2();
+
+            poly.Method(3, 2, 3, 3);
+        }
         public static void Perform_StrategyPattern()
         {
             StrategyContext st = null;
@@ -221,26 +228,6 @@ namespace Practice
             int result = st.ExecuteOperation(2, 3);
 
             Console.WriteLine($"\nThe result of your {method} is {result}.");
-        }
-        public static async void Perform_Concurrency()
-        {
-
-            var firstWatch = Stopwatch.StartNew();
-            Helpers.CallFirstTask();
-            Helpers.CallSecondTask();
-            firstWatch.Stop();
-
-            Console.WriteLine("\n\nAsync\n\n");
-            Console.WriteLine("Wait 5 seconds...");
-            Thread.Sleep(5000);
-
-            var secondWatch = Stopwatch.StartNew();
-            await Helpers.CallFirstTaskAsync();
-            await Helpers.CallSecondTaskAsync();
-            secondWatch.Stop();
-
-            Console.WriteLine("\n\nSync version executed in : " + firstWatch.ElapsedMilliseconds);
-            Console.WriteLine("Async version executed in : " + secondWatch.ElapsedMilliseconds);
         }
         public static void Perform_StragetyPattern2()
         {
@@ -333,6 +320,26 @@ namespace Practice
             Car car3 = new Car();
 
             Console.WriteLine("Car counter : " + CarCounter.Count + "\nMy car counter : " + Car.MyCarCounter);
+        }
+        public static async void Perform_Concurrency()
+        {
+
+            var firstWatch = Stopwatch.StartNew();
+            Helpers.CallFirstTask();
+            Helpers.CallSecondTask();
+            firstWatch.Stop();
+
+            Console.WriteLine("\n\nAsync\n\n");
+            Console.WriteLine("Wait 5 seconds...");
+            Thread.Sleep(5000);
+
+            var secondWatch = Stopwatch.StartNew();
+            await Helpers.CallFirstTaskAsync();
+            await Helpers.CallSecondTaskAsync();
+            secondWatch.Stop();
+
+            Console.WriteLine("\n\nSync version executed in : " + firstWatch.ElapsedMilliseconds);
+            Console.WriteLine("Async version executed in : " + secondWatch.ElapsedMilliseconds);
         }
 
     }

@@ -130,6 +130,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OOP_Principles\Polymorphism.cs" />
+    <Compile Include="OOP_Principles\Polymorphism2.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProgramActions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

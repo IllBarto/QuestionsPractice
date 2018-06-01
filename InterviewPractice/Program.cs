@@ -15,9 +15,10 @@ namespace InterviewPractice
             //ProgramActions.Perform_AttributesReflections();
             //ProgramActions.Perform_Automapper();
             //ProgramActions.Perform_Extension();
-            ProgramActions.Perform_Interfaces();
+            //ProgramActions.Perform_Interfaces();
             //ProgramActions.Perform_MultipleInheritance();
             //ProgramActions.Perform_Polymorphism();
+            ProgramActions.Perform_Polymorphism2();
             //ProgramActions.Perform_Queue();
             //ProgramActions.Perform_StrategyPattern();
             //ProgramActions.Perform_StragetyPattern2();
