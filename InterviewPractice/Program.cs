@@ -15,7 +15,7 @@ namespace InterviewPractice
             //ProgramActions.Perform_AttributesReflections();
             //ProgramActions.Perform_Automapper();
             //ProgramActions.Perform_Extension();
-            //ProgramActions.Perform_Interfaces();
+            ProgramActions.Perform_Interfaces();
             //ProgramActions.Perform_MultipleInheritance();
             //ProgramActions.Perform_Polymorphism();
             //ProgramActions.Perform_Queue();
@@ -25,7 +25,7 @@ namespace InterviewPractice
             //ProgramActions.Perform_StrategySingleton();
             //ProgramActions.Perform_Decorator();
             //ProgramActions.Perform_EF();
-            ProgramActions.Perform_Count();
+            //ProgramActions.Perform_Count();
 
             Console.ReadLine();
         }

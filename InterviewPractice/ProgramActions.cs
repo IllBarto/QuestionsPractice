@@ -222,7 +222,7 @@ namespace Practice
 
             Console.WriteLine($"\nThe result of your {method} is {result}.");
         }
-        public static void Perform_Concurrency()
+        public static async void Perform_Concurrency()
         {
 
             var firstWatch = Stopwatch.StartNew();
@@ -235,8 +235,8 @@ namespace Practice
             Thread.Sleep(5000);
 
             var secondWatch = Stopwatch.StartNew();
-            Helpers.CallFirstTaskAsync();
-            Helpers.CallSecondTaskAsync();
+            await Helpers.CallFirstTaskAsync();
+            await Helpers.CallSecondTaskAsync();
             secondWatch.Stop();
 
             Console.WriteLine("\n\nSync version executed in : " + firstWatch.ElapsedMilliseconds);

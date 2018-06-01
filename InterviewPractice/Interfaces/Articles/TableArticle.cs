@@ -8,7 +8,8 @@ namespace Practice.Interfaces.Articles
 {
     class TableArticle : IArticle
     {
-        private int Count { get; set; }
+        private static int Count = 0;
+
         public string Name { get; set; } = "Table";
 
         public TableArticle()

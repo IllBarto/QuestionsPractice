@@ -1,5 +1,4 @@
-﻿using InterfaceImplementation.Interfaces.Articles;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,17 +9,17 @@ namespace Practice.Interfaces.Articles
 {
     class ChairArticle : IArticle
     {
-        private Counter counter = new Counter();
+        private static int Count = 0;
         public string Name { get; set; } = "Chair";
 
         public ChairArticle()
         {
-            Interlocked.Increment(ref counter.NumberOfUnits);
+            Count++;
         }
 
         public int GetNumberOfArticles()
         {
-            return counter.NumberOfUnits;
+            return Count;
         }
 
         public void DoStuff()

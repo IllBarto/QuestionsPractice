@@ -137,7 +137,6 @@
     <Compile Include="Extensions\Extension.cs" />
     <Compile Include="Extensions\Transaction.cs" />
     <Compile Include="Interfaces\Articles\ChairArticle.cs" />
-    <Compile Include="Interfaces\Articles\Counter.cs" />
     <Compile Include="Interfaces\Articles\IArticle.cs" />
     <Compile Include="Interfaces\Articles\TableArticle.cs" />
     <Compile Include="Interfaces\Messager\Emailer.cs" />
