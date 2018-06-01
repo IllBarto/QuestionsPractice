@@ -20,6 +20,8 @@ using System.Threading.Tasks;
 using System.Threading;
 using InterviewPractice.Design_Patterns.Decorator;
 using InterviewPractice.FluentAPI.Context;
+using System.Data.SqlClient;
+using InterviewPractice.CountObjects;
 
 namespace Practice
 {
@@ -313,35 +315,24 @@ namespace Practice
                 }
             }
         }
-        public static void Perform_Linq()
+        public static void Perform_StoredProcedure()
         {
-            List<int> nums = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
-
-            //Func<int, int, bool> lessThan = (num, n) => n <= num;
-
-            //var less = nums.Where(lessThan);
-
-            //var less = from n in nums
-            //           where lessThan(10, n)
-            //           select n;
-
-            var less = nums.Select(n => n);
-
-            foreach (var n in less)
+            using (MarketContext context = new MarketContext())
             {
-                Console.Write(n+ " ");
+                var sqlParam = new SqlParameter("@id", 2);
+
+                Product result = context.Database.SqlQuery<Product>("SelectProduct @id", sqlParam).SingleOrDefault();
+                Console.WriteLine(result);
             }
         }
-        public static void Perform_Abstract()
+        public static void Perform_Count()
         {
-            try
-            {
-                throw new MyExcept();
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            Car car1 = new Car();
+
+            Car car2 = new Car();
+            Car car3 = new Car();
+
+            Console.WriteLine("Car counter : " + CarCounter.Count + "\nMy car counter : " + Car.MyCarCounter);
         }
 
     }
@@ -369,25 +360,8 @@ namespace Practice
         }
     }
 
-    class MyExcept : Exception
+    static class CarCounter
     {
-        public MyExcept():base("Invalid operator introduced.")
-        {
-
-        }
-    }
-
-    struct Str
-    {
-        private int A { get; set; }
-        public Str(int a)
-        {
-            this.A = a;
-        }
-
-        public int DoStuff()
-        {
-            return A;
-        }
+        public static int Count = 0;
     }
 }
