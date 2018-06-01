@@ -129,6 +129,7 @@
       <DependentUpon>201805301113338_SelectProc.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Multithreading\HardWorker.cs" />
     <Compile Include="OOP_Principles\Polymorphism.cs" />
     <Compile Include="OOP_Principles\Polymorphism2.cs" />
     <Compile Include="Program.cs" />

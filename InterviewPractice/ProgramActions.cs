@@ -23,6 +23,7 @@ using InterviewPractice.FluentAPI.Context;
 using System.Data.SqlClient;
 using InterviewPractice.CountObjects;
 using InterviewPractice.OOP_Principles;
+using InterviewPractice.Multithreading;
 
 namespace Practice
 {
@@ -341,7 +342,12 @@ namespace Practice
             Console.WriteLine("\n\nSync version executed in : " + firstWatch.ElapsedMilliseconds);
             Console.WriteLine("Async version executed in : " + secondWatch.ElapsedMilliseconds);
         }
+        public static void Perform_AsyncAwait()
+        {
+            HardWorker hw = new HardWorker();
 
+            hw.BeginWork();
+        }
     }
 
     class Helpers
