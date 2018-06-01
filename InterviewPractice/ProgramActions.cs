@@ -24,6 +24,7 @@ using System.Data.SqlClient;
 using InterviewPractice.CountObjects;
 using InterviewPractice.OOP_Principles;
 using InterviewPractice.Multithreading;
+using InterviewPractice.JSON;
 
 namespace Practice
 {
@@ -347,6 +348,30 @@ namespace Practice
             HardWorker hw = new HardWorker();
 
             hw.BeginWork();
+        }
+        public static void Perform_JSON()
+        {
+            MyProduct prod = new MyProduct();
+            prod.Name = "Sushi";
+            prod.Price = 600;
+
+            MyProduct prod2 = new MyProduct();
+            prod2.Name = "Apples";
+            prod2.Price = 10;
+
+            IEnumerable<MyProduct> prods = new List<MyProduct>() { prod, prod2 };
+
+            string jsonSushi = JsonWorker.ToJson(prods);
+
+            Console.WriteLine(jsonSushi);
+
+            string pr = JsonWorker.ToJson(prod2);
+            List<MyProduct> desProd = JsonWorker.ToMyProducts(jsonSushi, null);
+            Console.WriteLine("\nBack in products: \n");
+            foreach (var item in desProd)
+            {
+                Console.WriteLine(item.Name + " : " + item.Price);
+            }
         }
     }
 

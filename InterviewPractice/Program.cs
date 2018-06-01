@@ -27,7 +27,8 @@ namespace InterviewPractice
             //ProgramActions.Perform_Decorator();
             //ProgramActions.Perform_EF();
             //ProgramActions.Perform_Count();
-            ProgramActions.Perform_AsyncAwait();
+            //ProgramActions.Perform_AsyncAwait();
+            ProgramActions.Perform_JSON();
 
             Console.ReadLine();
         }
