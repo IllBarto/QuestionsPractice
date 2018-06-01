@@ -24,7 +24,9 @@ namespace InterviewPractice
             //ProgramActions.Perform_Concurrency();
             //ProgramActions.Perform_StrategySingleton();
             //ProgramActions.Perform_Decorator();
-            ProgramActions.Perform_EF();
+            //ProgramActions.Perform_EF();
+            //ProgramActions.Perform_Linq();
+            ProgramActions.Perform_Abstract();
 
             Console.ReadLine();
         }

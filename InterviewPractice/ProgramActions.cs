@@ -313,6 +313,36 @@ namespace Practice
                 }
             }
         }
+        public static void Perform_Linq()
+        {
+            List<int> nums = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
+
+            //Func<int, int, bool> lessThan = (num, n) => n <= num;
+
+            //var less = nums.Where(lessThan);
+
+            //var less = from n in nums
+            //           where lessThan(10, n)
+            //           select n;
+
+            var less = nums.Select(n => n);
+
+            foreach (var n in less)
+            {
+                Console.Write(n+ " ");
+            }
+        }
+        public static void Perform_Abstract()
+        {
+            try
+            {
+                throw new MyExcept();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
 
     }
 
@@ -336,6 +366,28 @@ namespace Practice
         public static async Task CallSecondTaskAsync()
         {
             await Task.Run(() => SecondThread.DoSecondTask(5));
+        }
+    }
+
+    class MyExcept : Exception
+    {
+        public MyExcept():base("Invalid operator introduced.")
+        {
+
+        }
+    }
+
+    struct Str
+    {
+        private int A { get; set; }
+        public Str(int a)
+        {
+            this.A = a;
+        }
+
+        public int DoStuff()
+        {
+            return A;
         }
     }
 }
