@@ -25,6 +25,7 @@ using InterviewPractice.CountObjects;
 using InterviewPractice.OOP_Principles;
 using InterviewPractice.Multithreading;
 using InterviewPractice.JSON;
+using InterviewPractice.Lock;
 
 namespace Practice
 {
@@ -372,6 +373,16 @@ namespace Practice
             {
                 Console.WriteLine(item.Name + " : " + item.Price);
             }
+        }
+        public static void Perform_Lock()
+        {
+            ListOperation<int> list = new ListOperation<int>(new List<int> { 1, 2, 3, 4, 5, 6, 7, 8 });
+
+            Parallel.Invoke(() => list.AddElement(9), /*() => list.AddElement(9),*/ () => list.RemoveElement(9));
+
+            Console.WriteLine("\nFinal");
+
+            list.Display();
         }
     }
 

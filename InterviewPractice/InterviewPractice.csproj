@@ -84,6 +84,7 @@
     <Compile Include="FluentAPI\Context\MarketContext.cs" />
     <Compile Include="FluentAPI\Context\Product.cs" />
     <Compile Include="JSON\JsonWorker.cs" />
+    <Compile Include="Lock\ListOperation.cs" />
     <Compile Include="Migrations\201805271437352_InitialCreate.cs" />
     <Compile Include="Migrations\201805271437352_InitialCreate.Designer.cs">
       <DependentUpon>201805271437352_InitialCreate.cs</DependentUpon>
@@ -195,8 +196,6 @@
       <DependentUpon>201805301113338_SelectProc.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="StoredProcedure\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
